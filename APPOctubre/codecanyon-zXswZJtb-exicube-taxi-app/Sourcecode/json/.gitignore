@@ -1,0 +1,10 @@
+# Archivos grandes
+APPOctubre/TOPUSWEB/TEMPLATE/Sourcecode/mobile-app/assets/images/Intro.mp4
+
+# Credenciales y secretos
+*.json
+*.p12
+*.pem
+serviceAccount*.json
+google-services.json
+GoogleService-Info.plist

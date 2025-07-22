@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Setup Documentation</title>
+	<link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+</head>
+
+<body>
+
+	<section id="body" class="width">
+
+		<aside id="sidebar" class="column-left">
+
+			<header>
+				<h1><a style="font-size: 22px" href="#">Setup Document</a></h1>
+				<h2>Documentation by 
+					<br><b> <span style="color:aliceblue"> Exicube App Solutions </span></b></h2>
+			</header>
+
+			<nav id="mainnav">
+				<ul>
+					<li class="item selected-item"><a href="#topMain">Introduction</a></li>
+					<li class="item"><a href="#DWT">Environment Setup</a></li>
+					<li class="item"><a href="#GS">Project Configuration</a></li>
+					<li class="item"><a href="#HAP">Deploying the Web App & Server Side</a></li>
+					<li class="item"><a href="#bs">Build Native App</a></li>
+					<li class="item"><a href="#apns">Post Build Setup</a></li>
+				</ul>
+			</nav>
+		</aside>
+		<section id="content">
+			<article id="topMain">
+				<h2>1. Introduction</h2>
+				<br>
+				<p>This project consists of 1 Mobile App, 1 Admin Portal clubbed Website.
+				<p class="secondPara">Technologies Used in Web App are:</p>
+				<ol class="expanded">
+					<li>React.Js</li>
+					<li>Redux</li>
+					<li>Material UI</li>
+					<li>Firebase Realtime Database</li>
+				</ol>
+
+				<p> We have built the Mobile App using React Native(Expo) for iOS and Android</p>
+				<p class="secondPara">The main Technologies used are</p>
+				<ol class="expanded">
+					<li>React Native</li>
+					<li>Expo</li>
+					<li>React Native Elements</li>
+				</ol>			
+			</article>
+			<article id="HS">
+				<h2>2. Help And Support </h2><br/>
+				<p>
+					Follow the link for more info on support.<br/><br/><a class="button" href="https://api.whatsapp.com/send?phone=573232837869&text=Hola+solocito+soporte" target="_blank">HELP & SUPPORT</a>
+				</p>
+			</article>
+			<article id="DWT">
+				<h2>3. Environment Setup</h2>
+				<br>
+				<p class="secondPara" style="margin-bottom:0px">To run the 2 Apps you need following things in your development
+					machine as mentioned below.</p>
+				<br>
+				<p class="secondPara heading">A. Download NodeJs</p>
+				<img height="100%" width="25%" src="assets/img/nodejs_logo.png" alt="HTML Structure" />
+
+				<ol class="styledlist listCustom" type="I">
+					<li>
+						<ul> Download instructions
+							<li>Mac users: For OS X, download the .pkg file form below link.<b>(v.18.18.2
+									recommended)</b></li>
+							<li>Windows users: Download either the MSI or the .exe form below link, whichever you prefer
+								.<b>(v.18.18.2 recommended)</b></li>
+						</ul>
+						<a href="https://nodejs.org/dist/v18.18.2/" class="button" target="_blank">Download Node
+							v.18.18.2 from here</a>
+					</li>
+
+					<li>After Installing NodeJs you'll most likely need to restart your computer.</li>
+					<p style="color:#757575;font-size:18px;">To ensure that NodeJs is installed correctly, you can type:
+					</p>
+					<code class="codeBlockBg">
+						node -v
+				</code>
+					</li>
+					<p style="color:red;font-size:18px;">NOTE: DO NOT IGNORE THE NODE JS VERSION. IT HAS TO BE 18.18.x
+					</p>
+
+				</ol>
+				<p class="secondPara heading" id="Configure">B. Install Git <span style="color:red">(Windows PC Only)</span></p>
+
+				<ul>
+					<li> Download and install the latest from this link. <a href="https://git-scm.com/">https://git-scm.com/</a></li>
+					<br>
+				</ul>
+
+				<p class="secondPara heading" id="Configure">C. Install Python 3.12.0 <span style="color:red">(M1 Mac Only)</span></p>
+
+				<ul>
+					<li> Download and install from this link. <a href=" https://www.python.org/downloads/release/python-2718/"> https://www.python.org/downloads/release/python-2718/</a></li>
+					<br>
+				</ul>
+
+				<p class="secondPara heading" id="Configure">D. Install Eas Cli</p>
+				<img height="100%" width="30%" src="assets/img/expo_logo.png" alt="HTML Structure" />
+				<h4>In your command prompt, type: </h4>
+					<code class="codeBlockBg">
+						npm install -g eas-cli
+					   </code>
+				<h4>Create a account in <a href="https://expo.io/signup">https://expo.io/signup</a> and use the same
+					account to signin on command prompt using below command</h4>
+				<code class="codeBlockBg">
+						eas login
+					</code>
+				<p class="secondPara heading" id="Configure">E. Install Yarn</p>
+				<h4>In your command prompt, type: </h4>
+				<code class="codeBlockBg">
+						npm install -g yarn
+					</code>
+
+				<p class="secondPara heading" id="Configure">F. Install Firebase Tools and Login to Firebase</p>
+				<h4>In your command prompt, type: </h4>
+				<code class="codeBlockBg">
+						 npm install -g firebase-tools
+						</code>
+						
+						<h4>You have to login in firebase from the command prompt using below command</h4>
+						<code class="codeBlockBg">
+							firebase login
+						</code>
+						<p class="secondPara heading" id="Configure">G. Copy Firebase Login Token</p>
+				<h4>An access token from firebase is also required by the Eas build service. Again signin in firebase using below command</h4>
+				<code class="codeBlockBg">
+							firebase login:ci
+						</code>
+
+				<p><b><u> Step 1</u></b> Select Google account</p>
+				<img height="100%" width="40%" src="assets/img/ci_1.png" alt="HTML Structure" />
+
+				<p><b><u> Step 2</u></b> Allow the firebase</p>
+				<img height="100%" width="40%" src="assets/img/ci_2.png" alt="HTML Structure" /><br><br>
+
+				<p>You got success message</p>
+				<img height="100%" width="40%" src="assets/img/ci_3.png" alt="HTML Structure" />
+
+				
+			</article>
+			
+
+			<article id="bs">
+				<h2>6. Build Native Mobile App</h2>
+				<br>
+				<p>Go into the Main code folder in Command Prompt</p>
+				<code class="codeBlockBg">
+					cd Sourecode
+			 	</code>
+
+				<ol class="styledlist listCustom">
+					<li>For building Android </li>
+
+					<code class="codeBlockBg">
+						app:build-dev-client
+					</code>
+
+					<li>For building IOS</li>
+
+					<code class="codeBlockBg">
+						app:build-ios-sim
+					</code>
+				</ol>
+				<p>*For APK build run <b>yarn app:build-android-apk</b></p>
+				<p>When anything asked in the process above, let eas build handle all the certificate and key generation for you.</p>
+			</article>
+			<br></br>
+		
+			<br></br>
+		
+			<br></br>
+			
+		
+			<a href="#topMain" class="arrowTop">
+				<img src="assets/img/top.png" alt="gototop" />
+			</a>
+
+			<footer class="clear">
+				<hr>
+				<p>&copy; 2024  TREASCORP LLC &nbsp;| Developed by <a
+						href="https://treasapp.com/">TREASAPP </a></p>
+			</footer>
+
+		</section>
+		<div class="clear"></div>
+	</section>
+
+
+	<script>
+		var header = document.getElementById("mainnav");
+		var btns = header.getElementsByClassName("item");
+		for (var i = 0; i < btns.length; i++) {
+			btns[i].addEventListener("click", function () {
+				var current = document.getElementsByClassName("selected-item");
+				current[0].className = current[0].className.replace(" selected-item", "");
+				this.className += " selected-item";
+			});
+		}
+	</script>
+</body>
+
+</html>

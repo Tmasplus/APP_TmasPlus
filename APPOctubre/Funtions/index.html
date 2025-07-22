@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Documento Mejorado</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f6f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #f20505;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+        color: #333;
+    }
+
+    .header p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .header img {
+        width: 80px;
+        height: 60px;
+    }
+
+    .date-info {
+        color: #ff5e57;
+        font-size: 14px;
+    }
+
+    table {
+        width: 100%;
+        background-color: #ffffff;
+        border-collapse: collapse;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    table thead tr {
+        background-color: #f2f2f2;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #888;
+    }
+
+    table th, table td {
+        padding: 12px 15px;
+        text-align: left;
+        font-size: 14px;
+        color: #333;
+    }
+
+    table tbody tr {
+        border-bottom: 1px solid #eee;
+    }
+
+    table tbody tr:last-child {
+        border-bottom: none;
+    }
+
+    table td {
+        vertical-align: middle;
+    }
+
+    table th {
+        font-weight: 600;
+    }
+
+    .subtotal {
+        font-weight: 600;
+        color: #ff5e57;
+    }
+
+    /* Efecto hover */
+    table tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    /* Botón */
+    .btn-primary {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #009ca3;
+        color: #fff;
+        text-transform: uppercase;
+        text-align: center;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #007e8a;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>${settings.appName}</h1>
+            <p>Gracias por viajar con nosotros, ${booking.customer_name}</p>
+            <p style="color: #f20505;">${language.email_msg}</p>
+        </div>
+        <div class="date-info">
+            ${language.booking_date_time}: ${formattedTripDate}
+            <img src="https://cdn.pixabay.com/photo/2022/01/23/18/20/car-6961567_640.png" alt="Car Image" />
+        </div>
+    </div>
+
+    <table>
+        <tbody>
+            <tr>
+                <td colspan="3">${language.booking_id}</td>
+                <td class="subtotal">${booking.reference}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.booking_date_time}</td>
+                <td class="subtotal">${formattedBookingDate} ${bookinghours}:${bookingmin}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.pickup_location}</td>
+                <td>${booking.pickupAddress}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.drop_location}</td>
+                <td>${booking.dropAddress}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.trip_date_time}</td>
+                <td>${formattedTripDate} ${triphours}:${tripmin}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.driver_name}</td>
+                <td>${booking.driver_name}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.car_type}</td>
+                <td>${booking.carType}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.payment_mode}</td>
+                <td>${booking.payment_mode}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.distance}</td>
+                <td>${booking.distance}${settings.convert_to_mile ? language.mile : language.km}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.Discounts}</td>
+                <td>${booking.discount_amount ? booking.discount_amount : 0}</td>
+            </tr>
+            <tr>
+                <td colspan="3">${language.total}</td>
+                <td class="subtotal">${booking.trip_cost}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="#" class="btn-primary">Ver detalles del viaje</a>
+</div>
+
+</body>
+</html>

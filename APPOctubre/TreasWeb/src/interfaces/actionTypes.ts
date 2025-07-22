@@ -1,0 +1,9 @@
+// actionTypes.ts
+export const SET_USER = 'SET_USER';
+export const CLEAR_USER = 'CLEAR_USER';
+export const CONFIRM_BOOKING = "CONFIRM_BOOKING";
+export const CONFIRM_BOOKING_SUCCESS = "CONFIRM_BOOKING_SUCCESS";
+export const CONFIRM_BOOKING_FAILED = "CONFIRM_BOOKING_FAILED";
+export const CLEAR_BOOKING = "CLEAR_BOOKING";
+export const UPDATE_BOOKING = 'UPDATE_BOOKING';
+
